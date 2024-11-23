@@ -9,10 +9,13 @@ export class AssignmentGroup extends CourseInfo {
     this.assignments = assignments;
   }
 
-    function validatesubmission(value, errormessage) {
-     if (typeof(value) === 'Array' && value[0] instanceof AssignmentInfo){
-       return value;
-     } else {
-       throw new Error(errormessage);
-     }
+  validatesubmission(value, errormessage) {
+   if (typeof(value) === 'Array' && value[0] instanceof AssignmentInfo){
+     return value;
+   } else {
+     throw new Error(errormessage);
+   }
+  }
+
+  
 }

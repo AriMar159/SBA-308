@@ -4,7 +4,7 @@ export class CourseInfo {
     this.name = this.validateTypeOrThrow(name, 'string', 'name must be a string')
   }
 
-  function validateTypeOrThrow(value, type, errorMessage){
+  validateTypeOrThrow(value, type, errorMessage){
     if (typeof(value) === type){
       return value;
     } else {

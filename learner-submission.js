@@ -1,10 +1,10 @@
 class Submission{
   constructor(submitted_at,score){
-    this.submitted_at = this.validateTypeOrThrow(submitted_at, 'Date', 'submitted_at must be a date');
+    this.submitted_at = new Date(this.validateTypeOrThrow(submitted_at, 'string', 'submitted_at must be a date'));
     this.score = this.validateTypeOrThrow(score, 'number', 'score must be a number');
   }
   
-  function validateTypeOrThrow(value, type, errorMessage){
+  validateTypeOrThrow(value, type, errorMessage){
     if (typeof(value) === type){
       return value;
     } else {
@@ -19,7 +19,7 @@ export class LearnerSubmission {
     this.name = this.validateTypeOrThrow(name, 'string', 'name must be a string');
   }
 
-  function validateTypeOrThrow(value, type, errorMessage){
+  validateTypeOrThrow(value, type, errorMessage){
     if (typeof(value) === type){
       return value;
     } else {
@@ -27,7 +27,7 @@ export class LearnerSubmission {
     }
   }
 
-  function validatesubmission(value, errormessage) {
+  validatesubmission(value, errormessage) {
    if (value instanceof Submission){
      return value;
    } else {
