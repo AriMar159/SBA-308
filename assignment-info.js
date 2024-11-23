@@ -1,4 +1,4 @@
-import { CourseInfo } from './course-info';
+import { CourseInfo } from './course-info.js';
 
 export class AssignmentInfo extends CourseInfo {
   constructor(id, name, due_at, points){

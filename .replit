@@ -1,2 +1,7 @@
+run = "yarn start ./testfile.js"
+modules = ["nodejs-18"]
 [nix]
 channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "node testfile.js"]

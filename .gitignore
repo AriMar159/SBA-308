@@ -1,1 +1,7 @@
 testfile.js
+
+.replit
+
+package.json
+yarn.lock
+node-modules/

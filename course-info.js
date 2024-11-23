@@ -8,6 +8,7 @@ export class CourseInfo {
     if (typeof(value) === type){
       return value;
     } else {
+      console.log(typeof(value), value)
       throw new Error(errorMessage);
     }
   }
