@@ -13,6 +13,10 @@ class Submission{
     }
   }
 
+  getscore(){
+     return this.score;
+   }
+  
   validatesubmissiondate(submitted_at){
     try {
       return new Date(submitted_at);
@@ -37,6 +41,10 @@ export class LearnerSubmission {
     }
   }
 
+  getscore(){
+     return this.submission.getscore();
+   }
+  
   validatesubmission(value, errormessage) {
    if (value.submitted_at && value.score){
      return new Submission(value.submitted_at, value.score);

@@ -3,7 +3,7 @@ import { CourseInfo } from './course-info.js';
 export class AssignmentInfo extends CourseInfo {
   constructor(id, name, due_at, points){
     super(id, name);
-    this.due_at = this.validatedudate(due_at);
+    this.due_at = this.validateduedate(due_at);
     this.points_possible = this.checkforzeromax(points);
   }
 
@@ -28,7 +28,7 @@ export class AssignmentInfo extends CourseInfo {
     }
   }
   checkiflate(submitted_at){
-    return submiited_at > this.due_at;
+    return submitted_at > this.due_at;
   }
 
   deductPoints(pointsearned, duedate, submittedat) {
