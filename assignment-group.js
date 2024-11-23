@@ -17,5 +17,10 @@ export class AssignmentGroup extends CourseInfo {
    }
   }
 
-  
+  checkifmatchingcourseid(unverifiedid) {
+    if (unverifiedid === this.course_id) {return true;}
+    else{
+      throw new Error('unverifiedid does not match course_id');
+    }
+  }
 }
