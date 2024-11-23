@@ -3,10 +3,18 @@ import { CourseInfo } from './course-info';
 export class AssignmentInfo extends CourseInfo {
   constructor(id, name, due_at, points){
     super(id, name);
-    this.due_at = new Date(due_at);
+    this.due_at = this.validatedudate(due_at);
     this.points_possible = this.checkforzeromax(points);
   }
 
+  validateduedate(due_at){
+    try {
+      return new Date(due_at);
+    } catch (error) {
+      throw new Error('due_at must be a date string');
+    }
+  }
+  
   checkforzeromax(points){
     try {
       const score = this.validateTypeOrThrow(points, 'number', 'points_possible must be a number');
